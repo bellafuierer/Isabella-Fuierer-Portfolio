@@ -82,7 +82,7 @@
       font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
       padding: .4rem 1rem; border: 1px solid var(--border); color: var(--muted); background: transparent;
     }
-    .pill.highlight { background: var(--red); color: white; border-color: var(--red); }
+
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn {
       font-family: var(--mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
@@ -93,13 +93,6 @@
     .btn-primary:hover { background: var(--red); border-color: var(--red); }
     .btn-ghost { background: transparent; color: var(--dark); }
     .btn-ghost:hover { background: var(--dark); color: var(--bg); }
-    .hero-stripe {
-      background: var(--red); color: white; font-family: var(--bebas);
-      font-size: 1rem; letter-spacing: .25em; padding: 1rem 0; white-space: nowrap; overflow: hidden;
-    }
-    .hero-stripe-inner { display: inline-flex; animation: marquee 20s linear infinite; }
-    .hero-stripe-inner span { margin-right: 4rem; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* SECTIONS */
     section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
@@ -107,6 +100,22 @@
     .section-num { font-family: var(--mono); font-size: 11px; color: var(--red); letter-spacing: .2em; }
     .section-title { font-family: var(--bebas); font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: .05em; line-height: 1; }
     .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 1rem; }
+
+    /* EXTRA CURRICULARS GRID */
+    .extra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .extra-card { 
+      background: var(--surface); 
+      border: 1px solid var(--border); 
+      padding: 2rem; 
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .extra-card:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .extra-role { font-family: var(--mono); font-size: 10px; color: var(--red); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; display: block; }
+    .extra-org { font-family: var(--bebas); font-size: 1.8rem; line-height: 1.1; margin-bottom: 1rem; color: var(--dark); }
+    .extra-desc { font-size: 0.95rem; color: var(--muted); }
 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
@@ -235,12 +244,12 @@
     <li><a href="#about">About</a></li>
     <li><a href="#racing">Racing</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#extracurriculars">Extracurriculars</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content fade-up">
     <p class="hero-eyebrow" style="margin-bottom: 20px;">Mechanical Engineering Major · Math Minor · Automation, Robotics, and Manufacturing Concentration <br> Fairfield University · Class of 2026</p>
@@ -250,10 +259,10 @@
     </div>
     <p class="hero-tagline">Senior Mechanical Engineering Major</p>
     <div class="hero-pills">
-      <span class="pill ">Baja SAE Racing: <br> Business Subsystem Founder </span>
-      <span class="pill">Society of Women Engineers: <br> President</span>
-      <span class="pill">Womens Club Soccer: <br> Goalkeeper</span>
-      <span class="pill">University Orchestra: <br> Violinist</span>
+      <span class="pill">Baja SAE: Business Founder</span>
+      <span class="pill">SWE: President</span>
+      <span class="pill">Club Soccer: Goalkeeper</span>
+      <span class="pill">Orchestra: Violinist</span>
       <span class="pill">MBA Incoming — RPI Lally</span>
     </div>
     <div class="hero-actions">
@@ -261,10 +270,8 @@
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
     </div>
   </div>
-
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-header">
     <span class="section-num">01</span>
@@ -300,7 +307,6 @@
   </div>
 </section>
 
-<!-- RACING -->
 <section class="racing" id="racing">
   <div class="section-header">
     <span class="section-num">02</span>
@@ -311,7 +317,6 @@
     <div class="fade-up">
       <p>Baja SAE is one of the most demanding engineering competitions in the world — teams design, build, and race a single-seat off-road vehicle against universities globally. This isn't a classroom exercise. <strong>Every weld, every component, every design decision gets tested at full speed in the dirt.</strong></p>
       <p>I'm a core member of <strong>Fairfield University's Baja SAE team</strong>, contributing across the full vehicle build cycle — from concept and CAD through fabrication, testing, and competition. My work with the team was featured in a Fairfield University news article.</p>
-      <p style="color:rgba(255,255,255,.4); font-size:.9rem; font-style:italic;">📸 Add your photos and race results here to make this section really shine.</p>
     </div>
     <div class="fade-up">
       <div class="racing-links">
@@ -326,13 +331,6 @@
           <div>
             <div class="link-label">Instagram</div>
             @bajafairfielduniversity
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a href="#contact" class="racing-link">
-          <div>
-            <div class="link-label">Want to know more?</div>
-            Get in touch — I have photos &amp; stories
           </div>
           <span class="arrow">→</span>
         </a>
@@ -358,7 +356,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
     <span class="section-num">03</span>
@@ -366,7 +363,6 @@
     <div class="section-line"></div>
   </div>
   <div class="projects-grid">
-
     <div class="project-card featured fade-up">
       <div class="project-thumb" style="background:#ece8e0;">
         <span class="project-badge">⭐ Senior Design</span>
@@ -380,50 +376,52 @@
         </div>
         <h3>Tabletop Clean Room Box</h3>
         <p>My senior capstone — a collaboration with <strong style="color:var(--text);">ASML</strong>, the world's leading semiconductor lithography company. Designed and engineered a tabletop clean room enclosure addressing real industry requirements: contamination control, precision airflow, and manufacturing constraints at scale.</p>
-        <p style="margin-top:.8rem;">This is the flagship project of my undergraduate career, bridging rigorous academic engineering with genuine industry application at one of the world's most advanced tech companies.</p>
-        <p class="add-link">📎 Add project report, CAD files, or demo video when ready</p>
       </div>
     </div>
-
-    <div class="project-card fade-up">
-      <div class="project-thumb" style="background:#e4edf5;">
-        🌊
-        <span class="project-badge">Fluids & Design</span>
-      </div>
-      <div class="project-info">
-        <div class="project-tag-row">
-          <span class="project-tag">Fluid Mechanics</span>
-          <span class="project-tag">Prototyping</span>
-        </div>
-        <h3>Flotation Device</h3>
-        <p>Engineered a flotation device applying principles of fluid mechanics, buoyancy analysis, and structural loading to a functional physical prototype.</p>
-        <p class="add-link">📎 Add photos, report, or details when ready</p>
-      </div>
-    </div>
-
-    <div class="project-card fade-up">
-      <div class="project-thumb" style="background:#e4f0e8;">
-        🤖
-        <span class="project-badge">Autonomous Systems</span>
-      </div>
-      <div class="project-info">
-        <div class="project-tag-row">
-          <span class="project-tag">Robotics</span>
-          <span class="project-tag">Controls</span>
-        </div>
-        <h3>Autonomous Trash Can</h3>
-        <p>Designed and built a self-navigating autonomous trash can — integrating sensors, control systems, and mechanical design to detect and move toward waste without human input.</p>
-        <p class="add-link">📎 Add video demo or writeup when ready</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
+<section id="extracurriculars">
   <div class="section-header">
     <span class="section-num">04</span>
+    <h2 class="section-title">Extracurriculars</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="extra-grid fade-up">
+    <div class="extra-card">
+      <div>
+        <span class="extra-role">Business Subsystem Founder</span>
+        <h3 class="extra-org">Baja SAE Racing</h3>
+      </div>
+      <p class="extra-desc">Established the business foundation for the racing team, managing sponsorships, budgets, and organizational logistics.</p>
+    </div>
+    <div class="extra-card">
+      <div>
+        <span class="extra-role">President</span>
+        <h3 class="extra-org">Society of Women Engineers</h3>
+      </div>
+      <p class="extra-desc">Leading the university chapter to support and advocate for women in engineering through networking, outreach, and professional development.</p>
+    </div>
+    <div class="extra-card">
+      <div>
+        <span class="extra-role">Goalkeeper</span>
+        <h3 class="extra-org">Womens Club Soccer</h3>
+      </div>
+      <p class="extra-desc">Competitive play representing Fairfield University, focusing on teamwork, communication, and high-pressure performance.</p>
+    </div>
+    <div class="extra-card">
+      <div>
+        <span class="extra-role">Violinist</span>
+        <h3 class="extra-org">University Orchestra</h3>
+      </div>
+      <p class="extra-desc">Active member of the orchestral ensemble, performing diverse repertoire and maintaining a high level of technical proficiency.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-header">
+    <span class="section-num">05</span>
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
@@ -433,23 +431,19 @@
       <h3 class="edu-school">Fairfield University</h3>
       <p class="edu-degree">B.S. Mechanical Engineering</p>
       <p class="edu-date">Expected Graduation — May 2026</p>
-      <p class="edu-body">Coursework spanning thermodynamics, fluid mechanics, machine design, controls, and manufacturing. Hands-on focus through Baja SAE racing and a senior design capstone in partnership with ASML.</p>
     </div>
     <div class="edu-card next">
       <span class="next-badge">Up Next</span>
       <p class="edu-label">Incoming 2026</p>
       <h3 class="edu-school">RPI Lally School of Management</h3>
       <p class="edu-degree">Master of Business Administration — Management</p>
-      <p class="edu-date">Rensselaer Polytechnic Institute · Troy, NY</p>
-      <p class="edu-body">Bridging a technical engineering foundation with strategic business leadership — combining analytical depth with management, innovation, and organizational skills.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Get in Touch</h2>
     <div class="section-line"></div>
   </div>
@@ -464,10 +458,6 @@
           <span class="ci-label">LinkedIn</span>
           <span>isabella-fuierer-b5402a250</span>
         </a>
-        <a href="https://www.instagram.com/bajafairfielduniversity/" target="_blank" class="contact-item">
-          <span class="ci-label">Racing IG</span>
-          <span>@bajafairfielduniversity</span>
-        </a>
         <a href="https://github.com/bellafuierer" target="_blank" class="contact-item">
           <span class="ci-label">GitHub</span>
           <span>bellafuierer</span>
@@ -477,23 +467,10 @@
     <div class="fade-up">
       <form class="contact-form" onsubmit="return false;">
         <div class="form-row">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Your name"/>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com"/>
-          </div>
+          <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"/></div>
         </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="What's this about?"/>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell me more..."></textarea>
-        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell me more..."></textarea></div>
         <button type="submit" class="btn btn-primary">Send Message →</button>
       </form>
     </div>
