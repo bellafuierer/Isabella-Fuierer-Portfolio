@@ -157,11 +157,19 @@
     .highlight-box p { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
 #internships .project-info {
-  border-top: 4px solid var(--red); /* Adds a nice "professional" accent line at the top */
+  border-top: 4px solid var(--red);
   min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2.5rem 2rem; /* Added extra padding for breathing room */
+  background: var(--surface); /* Ensures it pops against the beige background */
+}
+
+/* Optional: Subtle hover effect to match your other cards */
+#internships .project-card:hover .project-info {
+  background: var(--bg2); 
+  transition: background 0.3s ease;
 }
     
     /* PROJECTS */
