@@ -156,20 +156,41 @@
     .highlight-box h4 { font-family: var(--bebas); font-size: 1.3rem; letter-spacing: .08em; color: white; margin-bottom: .5rem; }
     .highlight-box p { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.6; }
 
+/* Internships Specific Styles */
 #internships .project-info {
   border-top: 4px solid var(--red);
-  min-height: 250px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2.5rem 2rem; /* Added extra padding for breathing room */
-  background: var(--surface); /* Ensures it pops against the beige background */
+  justify-content: flex-start; /* Aligned to top for better readability */
+  padding: 2rem;
+  background: var(--surface);
 }
 
-/* Optional: Subtle hover effect to match your other cards */
-#internships .project-card:hover .project-info {
-  background: var(--bg2); 
-  transition: background 0.3s ease;
+.intern-company {
+  font-family: var(--bebas);
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.intern-role {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--dark); /* Solid black as requested */
+  margin-bottom: 0.4rem;
+}
+
+.intern-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
 }
     
     /* PROJECTS */
@@ -375,7 +396,7 @@
 <section id="internships">
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title">Professional Experience</h2>
+    <h2 class="section-title">Internships</h2>
     <div class="section-line"></div>
   </div>
   
@@ -420,7 +441,7 @@
           <span class="project-tag">Summer 2025</span>
         </div>
         <h3>Engineering Intern</h3>
-        <p>• Moved around different departments including engineering, manufacturing, logistics, cleanroom, and sales<br>Learned all of the engineering processes that are involved into manufacturing and producing vacuum chambers </p>
+        <p>Moved around different departments including engineering, manufacturing, logistics, cleanroom, and sales<br>Learned all of the engineering processes that are involved into manufacturing and producing vacuum chambers </p>
       </div>
     </div>
     
