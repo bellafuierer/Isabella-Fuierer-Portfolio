@@ -93,6 +93,14 @@
     .btn-primary:hover { background: var(--red); border-color: var(--red); }
     .btn-ghost { background: transparent; color: var(--dark); }
     .btn-ghost:hover { background: var(--dark); color: var(--bg); }
+    
+    /* Specifically target the first pill in the container */
+.hero-pills .pill:first-child {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+  font-weight: 600; /* Optional: makes it pop a bit more */
+}
 
     /* SECTIONS */
     section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
