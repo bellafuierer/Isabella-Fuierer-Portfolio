@@ -192,7 +192,16 @@
   color: var(--muted);
   margin-bottom: 1.2rem;
 }
-    
+
+  /* Racing Style */
+    .highlight-box img.icon-photo {
+  width: 40px; /* Adjust this number to make the icon bigger or smaller */
+  height: 40px; /* Match the width for a perfect square */
+  object-fit: cover; /* This prevents the image from squishing */
+  border-radius: 4px; /* Optional: adds a subtle rounded corner */
+  margin-bottom: 1rem; /* Maintains the spacing of the original emoji */
+  display: block; /* Ensures it sits on its own line */
+}
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
     .project-card {
@@ -377,7 +386,7 @@
   </div>
   <div class="racing-highlights fade-up">
     <div class="highlight-box">
-      <span class="icon">🔧</span>
+      <img src="Baja%20photo.png" alt="Baja photo icon" class="icon-photo">
       <h4>Full Vehicle Build</h4>
       <p>Designed and fabricated a competitive off-road race car from the ground up — suspension, drivetrain, chassis, and beyond.</p>
     </div>
