@@ -228,6 +228,16 @@
     .project-info p { color: var(--muted); font-size: .95rem; line-height: 1.7; }
     .add-link { margin-top: 1rem !important; font-family: var(--mono); font-size: 11px; color: var(--red) !important; letter-spacing: .08em; font-style: italic; opacity: .7; }
 
+/* Styling for photos in the extracurricular cards */
+.extra-card-img {
+  width: 100%;          /* Fills the width of the card */
+  height: 150px;        /* Sets a consistent height */
+  object-fit: cover;    /* Crops the image perfectly to fit the box */
+  margin: 1rem 0;       /* Adds space above and below the photo */
+  border-radius: 4px;   /* Matches the card's subtle aesthetic */
+  border: 1px solid var(--border);
+}
+    
     /* EDUCATION */
     .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .edu-card { border: 1px solid var(--border); padding: 2.5rem; position: relative; overflow: hidden; transition: border-color .2s; }
@@ -535,6 +545,7 @@
       <div>
         <span class="extra-role">Business Subsystem Founder</span>
         <h3 class="extra-org">Baja SAE Racing</h3>
+        <img src="Baja%20Photo%202.png" alt="Baja Team" class="extra-card-img">
       </div>
       <p class="extra-desc">Established the business foundation for the racing team, managing sponsorships, budgets, and organizational logistics.</p>
     </div>
