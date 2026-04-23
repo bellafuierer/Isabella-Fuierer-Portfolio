@@ -219,7 +219,7 @@
     .project-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
     .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.5fr; }
     .project-thumb {
-      background: var(--bg2); height: 100px; display: flex; align-items: center;
+      background: var(--bg2); height: 200px; display: flex; align-items: center;
       justify-content: center; font-size: 4rem; border-bottom: 1px solid var(--border); position: relative;
     }
     .project-card.featured .project-thumb { height: 100%; min-height: 280px; border-bottom: none; border-right: 1px solid var(--border); font-size: 6rem; }
@@ -294,7 +294,7 @@
       .about-grid, .racing-intro, .edu-grid, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .racing-highlights { grid-template-columns: 1fr; }
       .project-card.featured { grid-template-columns: 1fr; }
-      .project-card.featured .project-thumb { height: 100px; border-right: none; border-bottom: 1px solid var(--border); }
+      .project-card.featured .project-thumb { height: 200px; border-right: none; border-bottom: 1px solid var(--border); }
       footer { flex-direction: column; gap: .8rem; text-align: center; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -498,26 +498,20 @@
   </div>
   
   <div class="project-info">
-  <div class="project-tag-row">
-    <span class="project-tag">ASML Partnership</span>
-    <span class="project-tag">Capstone</span>
-    <span class="project-tag">2025–2026</span>
+    <div class="project-tag-row">
+      <span class="project-tag">ASML Partnership</span>
+      <span class="project-tag">Capstone</span>
+      <span class="project-tag">2025–2026</span>
+    </div>
+    <h3>Tabletop Cleanroom</h3>
+    <p>For my Senior Capstone, I collaborated with <strong>ASML</strong> to design and engineer a tabletop cleanroom enclosure to address real industry requirements: contamination control, precision airflow, and manufacturing constraints at scale.</p>
+    
+    <p class="add-link">
+      <a href="Slide1.jpg" target="_blank" class="poster-link" style="text-decoration: none; color: inherit; font-weight: bold;">
+        View Project Poster →
+      </a>
+    </p>
   </div>
-  <h3>Tabletop Cleanroom</h3>
-  <p>Collaborated with <strong>ASML</strong> to design a modular cleanroom environment for precision semiconductor equipment testing.</p>
-  
-  <ul style="margin: 1rem 0; padding-left: 1.2rem; color: var(--muted); font-size: 0.9rem;">
-    <li>Developed a custom <strong>HEPA filtration</strong> and positive pressure airflow system.</li>
-    <li>Modeled all structural components in <strong>SolidWorks</strong> for manufacturing.</li>
-    <li>Analyzed contamination control protocols to meet <strong>ISO Class 5</strong> standards.</li>
-  </ul>
-  
-  <p class="add-link">
-    <a href="Slide1.JPG" target="_blank" class="poster-link" style="text-decoration: none; color: var(--red); font-weight: bold;">
-      View Project Poster →
-    </a>
-  </p>
-</div>
 </div>
 
     <div class="project-card fade-up">
