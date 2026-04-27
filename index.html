@@ -18,18 +18,6 @@
       --bebas: 'Bebas Neue', sans-serif;
       --serif: 'Crimson Pro', Georgia, serif;
       --mono: 'IBM Plex Mono', monospace;
-      .poster-link {
-  color: var(--red);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
-}
-.poster-link:hover {
-  text-decoration: underline;
-}
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -94,7 +82,9 @@
       font-family: var(--mono); font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
       padding: .4rem 1rem; border: 1px solid var(--border); color: var(--muted); background: transparent;
     }
-
+    .hero-pills .pill:first-child {
+      background: var(--red); color: white; border-color: var(--red); font-weight: 600;
+    }
     .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn {
       font-family: var(--mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
@@ -105,14 +95,6 @@
     .btn-primary:hover { background: var(--red); border-color: var(--red); }
     .btn-ghost { background: transparent; color: var(--dark); }
     .btn-ghost:hover { background: var(--dark); color: var(--bg); }
-    
-    /* Specifically target the first pill in the container */
-.hero-pills .pill:first-child {
-  background: var(--red);
-  color: white;
-  border-color: var(--red);
-  font-weight: 600; /* Optional: makes it pop a bit more */
-}
 
     /* SECTIONS */
     section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
@@ -123,19 +105,15 @@
 
     /* EXTRA CURRICULARS GRID */
     .extra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .extra-card { 
-      background: var(--surface); 
-      border: 1px solid var(--border); 
-      padding: 2rem; 
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .extra-card {
+      background: var(--surface); border: 1px solid var(--border); padding: 2rem;
+      transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
     }
     .extra-card:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .extra-role { font-family: var(--mono); font-size: 10px; color: var(--red); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; display: block; }
     .extra-org { font-family: var(--bebas); font-size: 1.8rem; line-height: 1.1; margin-bottom: 1rem; color: var(--dark); }
     .extra-desc { font-size: 0.95rem; color: var(--muted); }
+    .extra-card-img { width: 100%; height: 150px; object-fit: cover; margin: 1rem 0; border-radius: 4px; border: 1px solid var(--border); }
 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
@@ -175,53 +153,18 @@
     .highlight-box .icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
     .highlight-box h4 { font-family: var(--bebas); font-size: 1.3rem; letter-spacing: .08em; color: white; margin-bottom: .5rem; }
     .highlight-box p { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .highlight-box img.icon-photo { width: 400px; height: 300px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; display: block; }
 
-/* Internships Specific Styles */
-#internships .project-info {
-  border-top: 4px solid var(--red);
-  min-height: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Aligned to top for better readability */
-  padding: 2rem;
-  background: var(--surface);
-}
+    /* INTERNSHIPS */
+    #internships .project-info {
+      border-top: 4px solid var(--red); min-height: 280px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 2rem; background: var(--surface);
+    }
+    .intern-company { font-family: var(--bebas); font-size: 2.2rem; letter-spacing: 0.05em; color: var(--dark); line-height: 1; margin-bottom: 0.2rem; }
+    .intern-role { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; color: var(--dark); margin-bottom: 0.4rem; }
+    .intern-meta { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.2rem; }
 
-.intern-company {
-  font-family: var(--bebas);
-  font-size: 2.2rem;
-  letter-spacing: 0.05em;
-  color: var(--dark);
-  line-height: 1;
-  margin-bottom: 0.2rem;
-}
-
-.intern-role {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--dark); /* Solid black as requested */
-  margin-bottom: 0.4rem;
-}
-
-.intern-meta {
-  font-family: var(--mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 1.2rem;
-}
-
-  /* Racing Style */
-    .highlight-box img.icon-photo {
-  width: 400px; /* Adjust this number to make the icon bigger or smaller */
-  height: 300px; /* Match the width for a perfect square */
-  object-fit: cover; /* This prevents the image from squishing */
-  border-radius: 4px; /* Optional: adds a subtle rounded corner */
-  margin-bottom: 1rem; /* Maintains the spacing of the original emoji */
-  display: block; /* Ensures it sits on its own line */
-}
     /* PROJECTS */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
     .project-card {
@@ -229,15 +172,17 @@
       transition: border-color .2s, transform .2s, box-shadow .2s;
     }
     .project-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+
+    /* Featured card spans full width, side-by-side layout */
     .project-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.5fr; }
     .project-thumb {
       background: var(--bg2); height: 200px; display: flex; align-items: center;
       justify-content: center; font-size: 4rem; border-bottom: 1px solid var(--border); position: relative;
     }
-    .project-card.featured .project-thumb { height: 100%; min-height: 280px; border-bottom: none; border-right: 1px solid var(--border); font-size: 6rem; }
+    .project-card.featured .project-thumb { height: 100%; min-height: 340px; border-bottom: none; border-right: 1px solid var(--border); font-size: 6rem; }
     .project-badge {
       position: absolute; top: 1rem; left: 1rem; font-family: var(--mono); font-size: 10px;
-      letter-spacing: .15em; text-transform: uppercase; padding: .3rem .7rem; background: var(--red); color: white;
+      letter-spacing: .15em; text-transform: uppercase; padding: .3rem .7rem; background: var(--red); color: white; z-index: 1;
     }
     .project-info { padding: 1.5rem 1.8rem 1.8rem; }
     .project-card.featured .project-info { display: flex; flex-direction: column; justify-content: center; padding: 2.5rem; }
@@ -246,18 +191,22 @@
     .project-info h3 { font-family: var(--bebas); font-size: 1.6rem; letter-spacing: .05em; margin-bottom: .5rem; }
     .project-card.featured .project-info h3 { font-size: 2.4rem; }
     .project-info p { color: var(--muted); font-size: .95rem; line-height: 1.7; }
-    .add-link { margin-top: 1rem !important; font-family: var(--mono); font-size: 11px; color: var(--red) !important; letter-spacing: .08em; font-style: italic; opacity: .7; }
 
-/* Styling for photos in the extracurricular cards */
-.extra-card-img {
-  width: 100%;          /* Fills the width of the card */
-  height: 150px;        /* Sets a consistent height */
-  object-fit: cover;    /* Crops the image perfectly to fit the box */
-  margin: 1rem 0;       /* Adds space above and below the photo */
-  border-radius: 4px;   /* Matches the card's subtle aesthetic */
-  border: 1px solid var(--border);
-}
-    
+    /* All project links — burnt orange, no blue ever */
+    .project-media-links { display: flex; flex-direction: column; gap: .5rem; margin-top: 1.2rem; }
+    .project-media-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--red); text-decoration: none; font-weight: 600; transition: opacity .2s;
+    }
+    .project-media-link:hover { opacity: .7; text-decoration: underline; }
+    a.project-media-link, a.project-media-link:visited, a.project-media-link:link { color: var(--red); }
+
+    /* Vimeo embed */
+    .vimeo-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+    .vimeo-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .project-card.has-video .project-thumb { height: auto; padding: 0; background: #000; display: block; }
+
     /* EDUCATION */
     .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .edu-card { border: 1px solid var(--border); padding: 2.5rem; position: relative; overflow: hidden; transition: border-color .2s; }
@@ -345,8 +294,6 @@
       <span class="pill">Industrial Automation</span>
       <span class="pill">Intro to Financial Accounting</span>
     </div>
-  
-    </div>
   </div>
 </section>
 
@@ -360,6 +307,7 @@
     <div class="about-text fade-up">
       <p>I'm a <strong>Senior Mechanical Engineering student at Fairfield University</strong>, with a deep-seated drive to understand how complex systems work and, more importantly, how to apply that knowledge to real-world business challenges.</p>
       <p>While my engineering background has provided me with a rigorous technical foundation, my time as a leader, founding the Business Subsystem for <strong>Fairfield Off-Road Racing</strong> and serving as President of <strong>SWE</strong>, has shaped my desire to lead at the intersection of technology and management. As I transition into my <strong>MBA at RPI Lally</strong>, I am focused on becoming a technically-trained leader who can bridge the gap between the workshop and corporate strategy.</p>
+    </div>
     <div class="fade-up">
       <div class="about-stats">
         <div class="stat-box">
@@ -392,7 +340,7 @@
   <div class="racing-intro">
     <div class="fade-up">
       <p>Baja SAE is an intense collegiate design series that mirrors the rigors of professional automotive development. We design, build, and compete in the annual Internation Baja SAE competition where tests include hill climb, suspension and maneuverability course, and a 4 hour endurance race around a mile long track. It demands the complete lifecycle of a product, from initial <strong>Solidworks</strong> conceptualization and <strong>FEA analysis</strong> to hands-on fabrication and dynamic testing.</p>
-      <p>Recognizing that good engineering requires even better resources, I founded the Business Subsystem to professionalize our operations. By managing a <strong>$15,000+</strong> annual budget and securing <strong>$30,000</strong> in  sponsorships, I transformed the team into a financially sustainable organization. My role bridges the gap between the engineering and business side, proving that the most successful engineering projects are those backed by strategic communication, data-driven budgeting, and a strong professional brand.</p>
+      <p>Recognizing that good engineering requires even better resources, I founded the Business Subsystem to professionalize our operations. By managing a <strong>$15,000+</strong> annual budget and securing <strong>$30,000</strong> in sponsorships, I transformed the team into a financially sustainable organization. My role bridges the gap between the engineering and business side, proving that the most successful engineering projects are those backed by strategic communication, data-driven budgeting, and a strong professional brand.</p>
       <p>I'm a core leader of <strong>Fairfield University's Baja SAE team</strong>, contributing across the full vehicle build cycle — from concept and CAD through fabrication, testing, and competition. My work with the team was featured in a Fairfield University news article.</p>
     </div>
     <div class="fade-up">
@@ -404,13 +352,13 @@
           </div>
           <span class="arrow">→</span>
         </a>
-      <a href="https://www.instagram.com/reel/DPUSFNtjoj1/" target="_blank" class="racing-link">
-  <div>
-    <div class="link-label">Media Feature</div>
-    Baja Team Spotlight — The Fairfield Mirror
-  </div>
-  <span class="arrow">→</span>
-</a>
+        <a href="https://www.instagram.com/reel/DPUSFNtjoj1/" target="_blank" class="racing-link">
+          <div>
+            <div class="link-label">Media Feature</div>
+            Baja Team Spotlight — The Fairfield Mirror
+          </div>
+          <span class="arrow">→</span>
+        </a>
         <a href="https://www.instagram.com/bajafairfielduniversity/" target="_blank" class="racing-link">
           <div>
             <div class="link-label">Instagram</div>
@@ -446,75 +394,64 @@
     <h2 class="section-title">Professional Experience</h2>
     <div class="section-line"></div>
   </div>
-
   <div class="projects-grid">
     <div class="project-card fade-up">
       <div class="project-info">
         <h3 class="intern-company">Solid Sealing Technology</h3>
         <div class="intern-role">Engineering Intern</div>
         <div class="intern-meta">Watervliet, NY — Jun 2020 - Jan 2026</div>
-        <p>
-         - Manufactured multi piece ceramic to metal assemblies using SolidWorks drawings. <br>
-         - Followed engineering procedures to measure and identify location for metalized painting on precision ceramic components. <br>
-         - Trained and perfected metalizing precision ceramics using thick film painting techniques. <br>
-         - Collaborated with quality control feedback, using sandblasting techniques to modify subassemblies meeting customer drawing requirements.
-        </p>
+        <p>- Manufactured multi piece ceramic to metal assemblies using SolidWorks drawings.<br>
+           - Followed engineering procedures to measure and identify location for metalized painting on precision ceramic components.<br>
+           - Trained and perfected metalizing precision ceramics using thick film painting techniques.<br>
+           - Collaborated with quality control feedback, using sandblasting techniques to modify subassemblies meeting customer drawing requirements.</p>
       </div>
     </div>
-
     <div class="project-card fade-up">
       <div class="project-info">
         <h3 class="intern-company">Specialty Silicone Products</h3>
         <div class="intern-role">Engineering R&D Intern</div>
         <div class="intern-meta">Ballston Spa, NY — Summer 2024</div>
-        <p>
-         - Worked with the research and development team to design, test, and implement silicone products.<br> 
-         - Projects included compression tests, shrinkage tests using high tech equipment, and drawing O-Ring molds for military standards. <br>
-         - Research conclusions derive from measurements, testing, and analysis using various softwares.
-        </p>
+        <p>- Worked with the research and development team to design, test, and implement silicone products.<br>
+           - Projects included compression tests, shrinkage tests using high tech equipment, and drawing O-Ring molds for military standards.<br>
+           - Research conclusions derive from measurements, testing, and analysis using various softwares.</p>
       </div>
     </div>
-
     <div class="project-card fade-up">
       <div class="project-info">
         <h3 class="intern-company">RBC Heim Bearings</h3>
         <div class="intern-role">Manufacturing Engineering Intern</div>
         <div class="intern-meta">Fairfield, CT — Spring 2025 - Summer 2025</div>
-        <p>
-         - Worked part time during the Spring 2025 semester and full time during Summer 2025. <br>
-         - Assigned to projects in Lining Department such as making workspaces more efficient, utilizing resources to better improve workflow, and implementing new processes onto the shop floor. <br>
-         - Gained a better understanding to SolidWorks, Excel VBA, manufacturing processes, and problem solving.
-        </p>
+        <p>- Worked part time during the Spring 2025 semester and full time during Summer 2025.<br>
+           - Assigned to projects in Lining Department such as making workspaces more efficient, utilizing resources to better improve workflow, and implementing new processes onto the shop floor.<br>
+           - Gained a better understanding to SolidWorks, Excel VBA, manufacturing processes, and problem solving.</p>
       </div>
     </div>
-
     <div class="project-card fade-up">
       <div class="project-info">
         <h3 class="intern-company">VACOM</h3>
         <div class="intern-role">Engineering Intern</div>
         <div class="intern-meta">Jena, Germany — Summer 2025</div>
-        <p>
-         - Moved around different departments including engineering, manufacturing, logistics, cleanroom, and sales. <br>
-         - Learned all of the engineering processes that are involved into manufacturing and producing vacuum chambers.
-        </p>
+        <p>- Moved around different departments including engineering, manufacturing, logistics, cleanroom, and sales.<br>
+           - Learned all of the engineering processes that are involved into manufacturing and producing vacuum chambers.</p>
       </div>
     </div>
   </div>
 </section>
-  
+
 <section id="projects">
   <div class="section-header">
     <span class="section-num">04</span>
     <h2 class="section-title">Engineering Projects</h2>
     <div class="section-line"></div>
   </div>
-
   <div class="projects-grid">
+
+    <!-- FEATURED: Tabletop Cleanroom — full-width, side-by-side -->
     <div class="project-card featured fade-up">
       <div class="project-thumb" style="background:#ece8e0;">
-  <span class="project-badge">⭐ Senior Design</span>
-  <img src="Senior Design.png" alt="Tabletop Cleanroom" style="width:100%; height:100%; object-fit:cover; display:block;">
-</div>
+        <span class="project-badge">⭐ Senior Design</span>
+        <img src="Senior Design.png" alt="Tabletop Cleanroom" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
       <div class="project-info">
         <div class="project-tag-row">
           <span class="project-tag">ASML Partnership</span>
@@ -522,17 +459,15 @@
           <span class="project-tag">2025–2026</span>
         </div>
         <h3>Tabletop Cleanroom</h3>
-        <p>For my Senior Capstone, I collaboratied with <strong>ASML</strong> to design and engineer a tabletop cleanroom enclosure to address real industry requirements: contamination control, precision airflow, and manufacturing constraints at scale.</p>
-        <p class="add-link">
-  <a href="Slide1.JPG" target="_blank" class="poster-link">
-    View Project Poster
-          <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7453537040173871106" target="_blank" class="project-media-link">
-            <span class="link-icon">💼</span> View on LinkedIn
-</a>
+        <p>For my Senior Capstone, I collaborated with <strong>ASML</strong> to design and engineer a tabletop cleanroom enclosure to address real industry requirements: contamination control, precision airflow, and manufacturing constraints at scale.</p>
+        <div class="project-media-links">
+          <a href="Slide1.JPG" target="_blank" class="project-media-link">→ View Project Poster</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7453537040173871106" target="_blank" class="project-media-link">💼 View on LinkedIn</a>
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- Autonomous Trash Can — smaller card -->
     <div class="project-card fade-up">
       <div class="project-thumb" style="background:#e4f0e8;">
         <span class="project-badge">Mechatronics</span>
@@ -545,14 +480,23 @@
         </div>
         <h3>Autonomous Trash Can</h3>
         <p>Designed and built a self-navigating system integrating sensors and control logic to detect and move toward waste without human input.</p>
-        <p class="add-link">📎 View demo video</p>
+        <div class="project-media-links">
+          <a href="#" class="project-media-link">📎 View demo video</a>
+        </div>
       </div>
     </div>
 
-    <div class="project-card fade-up">
-      <div class="project-thumb" style="background:#e4edf5;">
-        <span class="project-badge">Fundamentals of Engineering</span>
-        🌊
+    <!-- Walk on Water — smaller card with embedded Vimeo -->
+    <div class="project-card has-video fade-up">
+      <div class="project-thumb" style="background:#e4edf5; height: auto; display: block; padding: 0;">
+        <span class="project-badge" style="z-index:2;">Fundamentals of Engineering</span>
+        <div class="vimeo-container">
+          <iframe src="https://player.vimeo.com/video/777001736?title=0&byline=0&portrait=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Walk on Water Project">
+          </iframe>
+        </div>
       </div>
       <div class="project-info">
         <div class="project-tag-row">
@@ -561,13 +505,12 @@
         </div>
         <h3>Walk on Water Project</h3>
         <p>Engineered a flotation device applying principles of fluid mechanics and structural loading to a functional physical prototype designed for buoyancy.</p>
-         <div class="project-media-links">
-          <a href="https://vimeo.com/777001736" target="_blank" class="project-media-link">
-            <span class="link-icon">▶</span> Watch on Vimeo
-          </a>
-         </div>
+        <div class="project-media-links">
+          <a href="https://vimeo.com/777001736" target="_blank" class="project-media-link">▶ Watch on Vimeo</a>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
